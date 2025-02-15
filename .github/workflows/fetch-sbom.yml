@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
   fetch-sbom:
@@ -53,3 +54,15 @@ jobs:
           git add .
           git commit -m "Update SBOM data for version ${{ env.VERSION }}" || exit 0
           git push || exit 0
+
+  deploy-sbom:
+    runs-on: ubuntu-latest
+    needs: fetch-sbom
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: main
