@@ -2,7 +2,7 @@ name: Weekly SBOM Update
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # Runs every Sunday at midnight IST (UTC+5:30)
+    - cron: '30 18 * * 6' # Runs every Sunday at midnight IST (18:30 UTC on Saturdays)
   workflow_dispatch:
   push:
     branches:
@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add .
+          git add . 
           git diff --exit-code || git commit -m "Update SBOM data for version ${{ env.VERSION }}"
           git push || exit 0
 
@@ -62,5 +62,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./ 
           publish_branch: care-sbom
