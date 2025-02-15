@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: '30 18 * * 6' # Runs every Sunday at midnight IST (18:30 UTC on Saturdays)
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 permissions:
   contents: write
@@ -20,37 +17,47 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get latest release version for care repo
-        id: care_version
+      - name: Get latest release versions for care and care_fe
+        id: versions
         run: |
-          VERSION=$(curl -s https://api.github.com/repos/ohcnetwork/care/releases/latest | jq -r .tag_name)
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          CARE_VERSION=$(curl -s https://api.github.com/repos/ohcnetwork/care/releases/latest | jq -r .tag_name)
+          CARE_FE_VERSION=$(curl -s https://api.github.com/repos/ohcnetwork/care_fe/releases/latest | jq -r .tag_name)
+          echo "CARE_VERSION=$CARE_VERSION" >> $GITHUB_ENV
+          echo "CARE_FE_VERSION=$CARE_FE_VERSION" >> $GITHUB_ENV
 
-      - name: Get latest release version for care_fe repo
-        id: care_fe_version
+      - name: Create SBOM directories for care and care_fe (if not exists)
         run: |
-          VERSION=$(curl -s https://api.github.com/repos/ohcnetwork/care_fe/releases/latest | jq -r .tag_name)
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          if [ ! -d "care/${{ env.CARE_VERSION }}" ]; then
+            mkdir -p care/${{ env.CARE_VERSION }}
+          fi
+          if [ ! -d "care_fe/${{ env.CARE_FE_VERSION }}" ]; then
+            mkdir -p care_fe/${{ env.CARE_FE_VERSION }}
+          fi
 
-      - name: Check and create SBOM directories for care and care_fe
+      - name: Fetch SBOM data for care and care_fe (if not exists)
         run: |
-          for repo in "care" "care_fe"; do
-            if [ ! -d "$repo/${{ env.VERSION }}" ]; then
-              mkdir -p $repo/${{ env.VERSION }}
-              curl -H "Accept: application/vnd.github+json" \
-                   -H "X-GitHub-Api-Version: 2022-11-28" \
-                   https://api.github.com/repos/ohcnetwork/$repo/dependency-graph/sbom > $repo/${{ env.VERSION }}/sbom.json
-            else
-              echo "$repo/${{ env.VERSION }} already exists. Skipping SBOM fetch for $repo."
-            fi
-          done
+          if [ ! -f "care/${{ env.CARE_VERSION }}/sbom.json" ]; then
+            curl -H "Accept: application/vnd.github+json" \
+                 -H "X-GitHub-Api-Version: 2022-11-28" \
+                 https://api.github.com/repos/ohcnetwork/care/dependency-graph/sbom > care/${{ env.CARE_VERSION }}/sbom.json
+          else
+            echo "SBOM data for care version ${{ env.CARE_VERSION }} already exists, skipping fetch."
+          fi
+
+          if [ ! -f "care_fe/${{ env.CARE_FE_VERSION }}/sbom.json" ]; then
+            curl -H "Accept: application/vnd.github+json" \
+                 -H "X-GitHub-Api-Version: 2022-11-28" \
+                 https://api.github.com/repos/ohcnetwork/care_fe/dependency-graph/sbom > care_fe/${{ env.CARE_FE_VERSION }}/sbom.json
+          else
+            echo "SBOM data for care_fe version ${{ env.CARE_FE_VERSION }} already exists, skipping fetch."
+          fi
 
       - name: Commit and push changes
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add . 
-          git diff --exit-code || git commit -m "Update SBOM data for version ${{ env.VERSION }}"
+          git add .
+          git commit -m "Update SBOM data for care ${{ env.CARE_VERSION }} and care_fe ${{ env.CARE_FE_VERSION }}" || exit 0
           git push || exit 0
 
   deploy-sbom:
@@ -62,5 +69,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./ 
+          publish_dir: ./
           publish_branch: care-sbom
