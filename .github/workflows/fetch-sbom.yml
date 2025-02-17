@@ -27,12 +27,8 @@ jobs:
 
       - name: Create SBOM directories for care and care_fe (if not exists)
         run: |
-          if [ ! -d "care/${{ env.CARE_VERSION }}" ]; then
-            mkdir -p care/${{ env.CARE_VERSION }}
-          fi
-          if [ ! -d "care_fe/${{ env.CARE_FE_VERSION }}" ]; then
-            mkdir -p care_fe/${{ env.CARE_FE_VERSION }}
-          fi
+          mkdir -p care/${{ env.CARE_VERSION }}
+          mkdir -p care_fe/${{ env.CARE_FE_VERSION }}
 
       - name: Fetch SBOM data for care and care_fe (if not exists)
         run: |
