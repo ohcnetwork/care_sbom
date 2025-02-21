@@ -1,8 +1,6 @@
 name: Weekly SBOM Update
 
 on:
-  schedule:
-    - cron: '30 18 * * 6' # Runs every Sunday at midnight IST (18:30 UTC on Saturdays)
   workflow_dispatch:
 
 permissions:
@@ -35,9 +33,8 @@ jobs:
           FILTER_CICD="^actions/|codecov/|getsentry/|reproducible-containers/|leonsteinhaeuser/"
           FILTER_AWS="^aws-actions/|boto3|botocore|types-awscrt|mypy-boto3-s3"
           FILTER_DOCKER="^docker/"
-          FILTER_MISC="s3transfer|types-s3transfer"
 
-          FILTER_REGEX="($FILTER_CICD|$FILTER_AWS|$FILTER_DOCKER|$FILTER_MISC)"
+          FILTER_REGEX="($FILTER_CICD|$FILTER_AWS|$FILTER_DOCKER|${{ env.EXTRA_FILTERS }})"
 
           if [ ! -f "care/${{ env.CARE_VERSION }}/sbom.json" ]; then
             curl -H "Accept: application/vnd.github+json" \
