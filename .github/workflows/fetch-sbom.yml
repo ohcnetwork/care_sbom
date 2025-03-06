@@ -1,8 +1,8 @@
 name: Weekly SBOM Update
 
 on:
-  schedule:
-    - cron: '30 18 * * 6' # Runs every Sunday at midnight IST (18:30 UTC on Saturdays)
+  # schedule:
+  #   - cron: '30 18 * * 6' # Runs every Sunday at midnight IST (18:30 UTC on Saturdays)
   workflow_dispatch:
 
 permissions:
