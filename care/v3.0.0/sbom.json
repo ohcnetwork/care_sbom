@@ -4,13 +4,13 @@
     "dataLicense": "CC0-1.0",
     "SPDXID": "SPDXRef-DOCUMENT",
     "name": "com.github.ohcnetwork/care",
-    "documentNamespace": "https://spdx.org/spdxdocs/protobom/7a743e40-d920-4383-a587-5894c09045f8",
+    "documentNamespace": "https://spdx.org/spdxdocs/protobom/10ab6a91-f744-4be6-a160-706f83db3eec",
     "creationInfo": {
       "creators": [
         "Tool: protobom-v0.0.0-20250305185956-5f6c42c4b6cf+dirty",
         "Tool: GitHub.com-Dependency-Graph"
       ],
-      "created": "2025-03-06T11:46:58Z"
+      "created": "2025-03-06T12:00:32Z"
     },
     "packages": [
       {
@@ -2183,36 +2183,6 @@
         ]
       },
       {
-        "name": "s3transfer",
-        "SPDXID": "SPDXRef-pypi-s3transfer-0.11.2-7609cb",
-        "versionInfo": "0.11.2",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:pypi/s3transfer@0.11.2"
-          }
-        ]
-      },
-      {
-        "name": "types-s3transfer",
-        "SPDXID": "SPDXRef-pypi-types-s3transfer-0.11.2-def85b",
-        "versionInfo": "0.11.2",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "licenseConcluded": "MIT",
-        "copyrightText": "Copyright (c) 2022 Vlad Emelianov, Copyright 2025 Vlad Emelianov",
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:pypi/types-s3transfer@0.11.2"
-          }
-        ]
-      },
-      {
         "name": "referencing",
         "SPDXID": "SPDXRef-pypi-referencing-0.36.2-0a6c44",
         "versionInfo": "0.36.2",
@@ -2243,22 +2213,6 @@
         ]
       },
       {
-        "name": "mypy-boto3-s3",
-        "SPDXID": "SPDXRef-pypi-mypy-boto3-s3-1.36.9-80843b",
-        "versionInfo": "1.36.9",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "licenseConcluded": "MIT",
-        "copyrightText": "Copyright (c) 2025 Vlad Emelianov, Copyright 2025 Vlad Emelianov",
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:pypi/mypy-boto3-s3@1.36.9"
-          }
-        ]
-      },
-      {
         "name": "certifi",
         "SPDXID": "SPDXRef-pypi-certifi-2025.1.31-755610",
         "versionInfo": "2025.1.31",
@@ -2271,20 +2225,6 @@
             "referenceCategory": "PACKAGE-MANAGER",
             "referenceType": "purl",
             "referenceLocator": "pkg:pypi/certifi@2025.1.31"
-          }
-        ]
-      },
-      {
-        "name": "types-awscrt",
-        "SPDXID": "SPDXRef-pypi-types-awscrt-0.23.9-835a81",
-        "versionInfo": "0.23.9",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:pypi/types-awscrt@0.23.9"
           }
         ]
       },
@@ -2321,235 +2261,6 @@
         ]
       },
       {
-        "name": "boto3",
-        "SPDXID": "SPDXRef-pypi-boto3-1.36.12-c68421",
-        "versionInfo": "1.36.12",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "licenseConcluded": "Apache-2.0",
-        "copyrightText": "Copyright 2013-2017 Amazon.com, Inc. or its affiliates, Copyright 2014 Amazon.com, Inc. or its affiliates, Copyright 2015 Amazon.com, Inc. or its affiliates, Copyright 2016 Amazon.com, Inc. or its affiliates, Copyright 2023 Amazon.com, Inc. or its affiliates",
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:pypi/boto3@1.36.12"
-          }
-        ]
-      },
-      {
-        "name": "boto3-stubs",
-        "SPDXID": "SPDXRef-pypi-boto3-stubs-1.36.12-e88cf4",
-        "versionInfo": "1.36.12",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:pypi/boto3-stubs@1.36.12"
-          }
-        ]
-      },
-      {
-        "name": "botocore-stubs",
-        "SPDXID": "SPDXRef-pypi-botocore-stubs-1.36.12-f818d0",
-        "versionInfo": "1.36.12",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "licenseConcluded": "MIT",
-        "copyrightText": "Copyright (c) 2022 Vlad Emelianov, Copyright 2025 Vlad Emelianov",
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:pypi/botocore-stubs@1.36.12"
-          }
-        ]
-      },
-      {
-        "name": "botocore",
-        "SPDXID": "SPDXRef-pypi-botocore-1.36.13-2d80a6",
-        "versionInfo": "1.36.13",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "licenseConcluded": "Apache-2.0",
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:pypi/botocore@1.36.13"
-          }
-        ]
-      },
-      {
-        "name": "actions/checkout",
-        "SPDXID": "SPDXRef-githubactions-actions-checkout-4..-87f130",
-        "versionInfo": "4.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/actions/checkout@4.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "actions/upload-artifact",
-        "SPDXID": "SPDXRef-githubactions-actions-upload-artifact-4..-fb60d2",
-        "versionInfo": "4.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/actions/upload-artifact@4.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "actions/download-artifact",
-        "SPDXID": "SPDXRef-githubactions-actions-download-artifact-4..-7c9dec",
-        "versionInfo": "4.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/actions/download-artifact@4.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "aws-actions/configure-aws-credentials",
-        "SPDXID": "SPDXRef-githubactions-aws-actions-configure-aws-credentials-4..-90ab20",
-        "versionInfo": "4.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/aws-actions/configure-aws-credentials@4.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "docker/setup-buildx-action",
-        "SPDXID": "SPDXRef-githubactions-docker-setup-buildx-action-3..-a42320",
-        "versionInfo": "3.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/docker/setup-buildx-action@3.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "aws-actions/amazon-ecs-render-task-definition",
-        "SPDXID": "SPDXRef-githubactions-aws-actions-amazon-ecs-render-task-definition-1..-6ef72c",
-        "versionInfo": "1.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/aws-actions/amazon-ecs-render-task-definition@1.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "docker/login-action",
-        "SPDXID": "SPDXRef-githubactions-docker-login-action-3..-f878af",
-        "versionInfo": "3.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/docker/login-action@3.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "actions/cache",
-        "SPDXID": "SPDXRef-githubactions-actions-cache-4..-7989d7",
-        "versionInfo": "4.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/actions/cache@4.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "docker/metadata-action",
-        "SPDXID": "SPDXRef-githubactions-docker-metadata-action-5..-85cf0d",
-        "versionInfo": "5.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/docker/metadata-action@5.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "getsentry/action-release",
-        "SPDXID": "SPDXRef-githubactions-getsentry-action-release-1..-f30063",
-        "versionInfo": "1.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/getsentry/action-release@1.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "aws-actions/amazon-ecs-deploy-task-definition",
-        "SPDXID": "SPDXRef-githubactions-aws-actions-amazon-ecs-deploy-task-definition-2..-10ad09",
-        "versionInfo": "2.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/aws-actions/amazon-ecs-deploy-task-definition@2.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "docker/build-push-action",
-        "SPDXID": "SPDXRef-githubactions-docker-build-push-action-6..-3776a1",
-        "versionInfo": "6.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/docker/build-push-action@6.%2A.%2A"
-          }
-        ]
-      },
-      {
         "name": "JamesIves/github-pages-deploy-action",
         "SPDXID": "SPDXRef-githubactions-JamesIves-github-pages-deploy-action-4..-dfbe12",
         "versionInfo": "4.*.*",
@@ -2560,90 +2271,6 @@
             "referenceCategory": "PACKAGE-MANAGER",
             "referenceType": "purl",
             "referenceLocator": "pkg:githubactions/JamesIves/github-pages-deploy-action@4.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "actions/setup-python",
-        "SPDXID": "SPDXRef-githubactions-actions-setup-python-5..-e45847",
-        "versionInfo": "5.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/actions/setup-python@5.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "leonsteinhaeuser/project-beta-automations",
-        "SPDXID": "SPDXRef-githubactions-leonsteinhaeuser-project-beta-automations-1.0.1-3b2132",
-        "versionInfo": "1.0.1",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/leonsteinhaeuser/project-beta-automations@1.0.1"
-          }
-        ]
-      },
-      {
-        "name": "actions/cache/restore",
-        "SPDXID": "SPDXRef-githubactions-actionscache-restore-4..-52c50c",
-        "versionInfo": "4.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/actions/cache/restore@4.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "actions/cache/save",
-        "SPDXID": "SPDXRef-githubactions-actionscache-save-4..-991145",
-        "versionInfo": "4.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/actions/cache/save@4.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "codecov/codecov-action",
-        "SPDXID": "SPDXRef-githubactions-codecov-codecov-action-5..-0cbaae",
-        "versionInfo": "5.*.*",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/codecov/codecov-action@5.%2A.%2A"
-          }
-        ]
-      },
-      {
-        "name": "reproducible-containers/buildkit-cache-dance",
-        "SPDXID": "SPDXRef-githubactions-reproducible-containers-buildkit-cache-dance-3.1.2-681305",
-        "versionInfo": "3.1.2",
-        "downloadLocation": "NOASSERTION",
-        "filesAnalyzed": false,
-        "externalRefs": [
-          {
-            "referenceCategory": "PACKAGE-MANAGER",
-            "referenceType": "purl",
-            "referenceLocator": "pkg:githubactions/reproducible-containers/buildkit-cache-dance@3.1.2"
           }
         ]
       },
