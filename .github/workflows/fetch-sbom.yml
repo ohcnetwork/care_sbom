@@ -28,7 +28,7 @@ jobs:
       - name: Create directories for SBOM data
         run: |
           mkdir -p care
-          mkdir -p care_fe/${{ env.CARE_FE_VERSION }}
+          mkdir -p care_fe
 
       - name: Fetch SBOM data for care and care_fe
         run: |
@@ -45,16 +45,12 @@ jobs:
           jq --arg regex "$FILTER_REGEX" 'del(.sbom.packages[] | select(.name | test($regex)))' \
           > care/sbom.json
 
-          # For care_fe: versioned approach
-          if [ ! -f "care_fe/${{ env.CARE_FE_VERSION }}/sbom.json" ]; then
-            curl -H "Accept: application/vnd.github+json" \
-                 -H "X-GitHub-Api-Version: 2022-11-28" \
-                 https://api.github.com/repos/ohcnetwork/care_fe/dependency-graph/sbom | \
-            jq --arg regex "$FILTER_REGEX" 'del(.sbom.packages[] | select(.name | test($regex)))' \
-            > care_fe/${{ env.CARE_FE_VERSION }}/sbom.json
-          else
-            echo "SBOM data for care_fe version ${{ env.CARE_FE_VERSION }} already exists, skipping fetch."
-          fi
+          # For care_fe: unversioned approach
+          curl -H "Accept: application/vnd.github+json" \
+               -H "X-GitHub-Api-Version: 2022-11-28" \
+               https://api.github.com/repos/ohcnetwork/care_fe/dependency-graph/sbom | \
+          jq --arg regex "$FILTER_REGEX" 'del(.sbom.packages[] | select(.name | test($regex)))' \
+          > care_fe/sbom.json
 
       - name: Commit and push changes
         run: |
