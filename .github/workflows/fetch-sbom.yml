@@ -21,7 +21,7 @@ jobs:
         id: versions
         run: |
           CARE_VERSION=$(curl -s https://api.github.com/repos/ohcnetwork/care/releases/latest | jq -r .tag_name)
-          CARE_FE_VERSION=$(curl -s https://api.github.com/repos/ohcnetwork/care_fe/releases/latest | jq -r .tag_name)
+          CARE_FE_VERSION=$(curl -s https://raw.githubusercontent.com/ohcnetwork/care_fe/develop/package.json | jq -r .version)
           echo "CARE_VERSION=$CARE_VERSION" >> $GITHUB_ENV
           echo "CARE_FE_VERSION=$CARE_FE_VERSION" >> $GITHUB_ENV
 
