@@ -5,8 +5,8 @@ This repository uses a GitHub Actions workflow to fetch and update the Software 
 The latest SBOM data is available at: [https://sbom.ohc.network/](https://sbom.ohc.network/)
 
 **NOTE:** To access SBOM data, navigate to :
-- **Care** [https://sbom.ohc.network/care/v3.0.0/sbom.json](https://sbom.ohc.network/care/v3.0.0/sbom.json)
-- **Care_fe** [https://sbom.ohc.network/care_fe/v3.0.0/sbom.json](https://sbom.ohc.network/care_fe/v3.0.0/sbom.json)
+- **Care** [https://sbom.ohc.network/care/sbom.json](https://sbom.ohc.network/care/sbom.json)
+- **Care_fe** [https://sbom.ohc.network/care_fe/sbom.json](https://sbom.ohc.network/care_fe/sbom.json)
 
 
 ## Workflow Overview

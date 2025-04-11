@@ -20,9 +20,9 @@ jobs:
       - name: Get latest release versions for care and care_fe
         id: versions
         run: |
-          CARE_VERSION=$(curl -s https://api.github.com/repos/ohcnetwork/care/releases/latest | jq -r .tag_name)
+          CARE_BE_VERSION=$(curl -s https://api.github.com/repos/ohcnetwork/care/releases/latest | jq -r .tag_name)
           CARE_FE_VERSION=$(curl -s https://raw.githubusercontent.com/ohcnetwork/care_fe/develop/package.json | jq -r .version)
-          echo "CARE_VERSION=$CARE_VERSION" >> $GITHUB_ENV
+          echo "CARE_BE_VERSION=$CARE_BE_VERSION" >> $GITHUB_ENV
           echo "CARE_FE_VERSION=$CARE_FE_VERSION" >> $GITHUB_ENV
 
       - name: Create directories for SBOM data
@@ -32,11 +32,10 @@ jobs:
 
       - name: Fetch SBOM data for care and care_fe
         run: |
-          FILTER_CICD="^actions/|codecov/|getsentry/|reproducible-containers/|leonsteinhaeuser/"
+          FILTER_CICD="^actions/|codecov/|getsentry/|reproducible-containers/|^docker/"
           FILTER_AWS="^aws-actions/|boto3|botocore|types-awscrt|mypy-boto3-s3"
-          FILTER_DOCKER="^docker/"
 
-          FILTER_REGEX="($FILTER_CICD|$FILTER_AWS|$FILTER_DOCKER|${{ vars.EXTRA_FILTERS }})"
+          FILTER_REGEX="($FILTER_CICD|$FILTER_AWS|${{ vars.EXTRA_FILTERS }})"
 
           # For care: unversioned approach
           curl -H "Accept: application/vnd.github+json" \
@@ -57,7 +56,7 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "Update SBOM data for care ${{ env.CARE_VERSION }} and care_fe ${{ env.CARE_FE_VERSION }}" || exit 0
+          git commit -m "Update SBOM data for care_be ${{ env.CARE_BE_VERSION }} and care_fe ${{ env.CARE_FE_VERSION }}" || exit 0
           git push || exit 0
 
   deploy-sbom:
