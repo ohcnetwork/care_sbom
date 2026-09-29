@@ -11,7 +11,7 @@ The latest SBOM data is available at: [https://sbom.ohc.network/](https://sbom.o
 
 ## Workflow Overview
 
-The workflow, defined in [`.github/workflows/fetch-sbom.yml`](.github/workflows/fetch-sbom.yml), has two main jobs:
+The workflow, defined in [`.github/workflows/sbom.yml`](.github/workflows/sbom.yml), has two main jobs:
 
 ### 1. `fetch-sbom` Job
 - **Checkout repository**
