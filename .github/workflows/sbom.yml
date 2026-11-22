@@ -66,6 +66,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
